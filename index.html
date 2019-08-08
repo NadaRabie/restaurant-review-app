@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="shortcut icon" type="image/ico" href="img/favicon.ico" />
+  <title>Restaurant Reviews</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <header role="header">
+      <nav class="navigation">
+        <h1><a href="/" class="title">Restaurant Reviews</a></h1>
+      </nav>
+    </header>
+  <main id="maincontent" role="main content">
+      <section id="map-container" aria-label="google map" class="map-container" role="section">
+        <div id="map"></div>
+      </section>
+    <section id="restaurants-section" role="section" aria-labelledby="filter-results-title">
+      <div class="filter-options" tabindex="-1">
+        <h2 id="filter-results-title">Filter Results</h2>
+        <label for="neighborhoods-select" hidden>Neighborhoods Filter</label>
+        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+          <option value="all">All Neighborhoods</option>
+        </select>
+        <label for="cuisines-select" hidden>Cuisines Filter</label>
+        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+          <option value="all">All Cuisines</option>
+        </select>
+      </div>
+      <ul id="restaurants-list" class="test" role="list" aria-label="restaurants list"></ul>
+    </section>
+  </main>
+
+  <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
+  <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChlSlTCIMCe6gEvEtDxSPX0Vl0zy8xCoE&libraries=places&callback=initMap"></script>
+
+
+  <footer id="footer">
+    Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+  </footer>
+
+</body>
+
+</html>
